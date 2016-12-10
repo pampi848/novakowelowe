@@ -5,7 +5,11 @@ $lista = "to co przyszło z bazy";
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
     <link href="style.css" rel="stylesheet"/>
+    <!--FreeFavicon.com-->
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <title>Strona Główna</title>
 </head>
 <body>
@@ -40,6 +44,8 @@ $lista = "to co przyszło z bazy";
         </table>
     </div>
 </div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

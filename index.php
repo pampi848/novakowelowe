@@ -3,7 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
     <link href="style.css" rel="stylesheet"/>
+    <!--FreeFavicon.com-->
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <title>Strona Główna</title>
 </head>
 <body>
@@ -22,15 +26,18 @@
         <i>Proszę podać dane.</i>
         <br/>
         <form name="formularz" method="post" action="add.php" onsubmit="return validateForm()"/>
-            <input required type="text" id="imie" name="formularz[imie]"/>
-            <input required type="text" id="nazwisko" name="formularz[nazwisko]"/>
-            <input required type="number" id="telefon" name="formularz[telefon]"/>
-            <input required type="email" id="mail" name="formularz[mail]"/>
-            <input type="submit"/>
+            <label for="imie">Imię: </label> <input required type="text" id="imie" name="formularz[imie]"/> <br/>
+            <label for="nazwisko">Nazwisko: </label> <input required type="text" id="nazwisko" name="formularz[nazwisko]"/> <br/>
+            <label for="telefon">Telefon: </label> <input required type="number" id="telefon" name="formularz[telefon]"/> <br/>
+            <label for="mail">E-mail: </label> <input required type="email" id="mail" name="formularz[mail]"/> <br/>
+            <input type="submit" value="Zatwierdź"/>
         </form>
-        <span id="messeges"><?=isset($_SESSION["messeges"])?$_SESSION["messeges"]:""?></span>
+        <div id="messeges" class='alert alert-danger <?=!isset($_SESSION["messeges"]) || empty($_SESSION["messeges"]) ? "hidden" : ""?>' role='alert'><?=isset($_SESSION["messeges"])?$_SESSION["messeges"]:""?></div>
     </div>
 </div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

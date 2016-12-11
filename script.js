@@ -1,8 +1,8 @@
 function validateForm() {
-    var imie = $()//document.forms["formularz"]["imie"].value;
-    var nazwisko = document.forms["formularz"]["nazwisko"].value;
-    var mail = document.forms["formularz"]["mail"].value;
-    var telefon = document.forms["formularz"]["telefon"].value;
+    var imie = $("#imie").value;
+    var nazwisko = $("#nazwisko").value; //document.forms["formularz"]["nazwisko"]
+    var mail = $("#mail").value;
+    var telefon = $("#telefon").value;
     var messeges = "";
 
     if(imie == "" || nazwisko == "" || mail == "" || telefon == ""){
@@ -14,11 +14,13 @@ function validateForm() {
     else if(!validateEmail(mail)){
         messeges = "Nieprawidłowy adres e-mail!";
     }
-    else return true;
-    $("#messeges").html(messeges)
-                  .removeClass("hidden");
 
-    return false;
+    if(messeges != "") {
+        $("#messeges").html(messeges)
+            .removeClass("hidden");
+        messeges = "";
+    }
+    else $("#formularz").submit();
 }
 
 function validateEmail(email) {
